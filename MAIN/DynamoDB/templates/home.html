@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar" style="color:#61b91e">
+      </style>
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" id="home" href="/home">Home</a>
+        <a class="nav-item nav-link" id="logOut" href="/logout">Log Out</a>
+       
+      </div>
+    </div>
+ 
+  </nav>
+
+   
+<h1 align="center">MY PERSONAL NOTES</h1>
+<ul class="list-group list-group-flush" id="notes">
+  <li class="list-group-item">
+    <button type="button" class="close" onClick="deleteNote()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+</ul>
+
+<div>
+  {% for item in items %}
+  <p>
+    {{ item.notes.S }}
+  </p>
+    {% endfor %}
+</div>
+
+<form method="POST">
+  <textarea name="note" id="note" class="form-control"></textarea>
+  <br />
+  <div align="center">
+
+    <button type="submit" class="btn btn-primary">Add Note</button>
+  </div>
+
+</form>
+</html>
